@@ -92,5 +92,39 @@ ask(
 
 
 
+// Стрелочные функции
+
+let summa = (a, b) => a + b;
+
+/* Эта стрелочная функция представляет собой более короткую форму:
+
+let sum = function(a, b) {
+  return a + b;
+};
+*/
+
+console.log(summa(1,2)); // 3
+
+
+// Динамическое создание функции
+let age = prompt("Сколько Вам лет?", 18);
+
+let welcome = (age < 18) ?
+  () => alert('Привет!') :
+  () => alert("Здравствуйте!");
+
+welcome();
+
+
+// Многострочные стрелочные функции
+
+let multiplication = (a,b) => {
+    let result = a * b;
+    return result;
+}
+
+console.log(multiplication(4,6));
+
+
 
 
