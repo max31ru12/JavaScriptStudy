@@ -128,3 +128,5 @@ console.log(multiplication(4,6));
 
 
 
+let len = '123'.length;
+console.log(len);
