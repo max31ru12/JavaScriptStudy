@@ -85,3 +85,34 @@ console.log(newAdmin);
 let clone = Object.assign({}, user);
 console.log(clone);
 
+
+// Ключевое слово this
+let User = {
+    name: "John",
+    age: 25,
+    // Во-первых, эта штука будет эквивалентна sayHi: funtion() {alert('Hi')}
+    sayHi() {
+        // this - Это текущий объект
+        alert(this.name);
+    }
+};
+
+// Значение this вычисляется во время выполнения кода
+sayBye = function() {
+    console.log(this.name);
+};
+
+John = {name: "John"};
+Dave = {name: "Dave"};
+
+John.f = sayBye;
+Dave.f = sayBye;
+
+// Это свойство вызываем как функцию
+John.f();
+Dave.f();
+
+
+
+
+
