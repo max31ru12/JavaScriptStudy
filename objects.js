@@ -113,6 +113,27 @@ John.f();
 Dave.f();
 
 
+// Функция-конструктор 
+function basket(name) {
+    this.name = name;
+    this.is_empty = false;
+}
+
+let basketOne = new basket("Магнит");
+let basketTwo = new basket("Пятерочка");
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
