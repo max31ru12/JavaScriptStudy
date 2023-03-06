@@ -1,3 +1,5 @@
+"use strict"
+
 // Пустой объект (два способа создания)
 let userOne = new Object();
 let userTwo = {};
@@ -47,10 +49,10 @@ console.log("orange" in bag); // false, bag не имеет сво-ва orange
 
 
 // Перебор свойств объекта
-for (key in bag) {
+for (let key in bag) {
     console.log(key);
     console.log(bag[key]);
-}
+};
 
 
 // Копирование объектов
@@ -69,9 +71,9 @@ console.log(a === b); // Это два независимых объекта, fa
 
 // Создать такой же, но независимый объект (клон) - только в цикле for in (нет стандартного метода)
 let newUser = {};
-for (key in user) {
+for (let key in user) {
     newUser[key] = user[key];
-}
+};
 
 console.log(user);
 console.log(newUser);
@@ -98,12 +100,12 @@ let User = {
 };
 
 // Значение this вычисляется во время выполнения кода
-sayBye = function() {
+let sayBye = function() {
     console.log(this.name);
 };
 
-John = {name: "John"};
-Dave = {name: "Dave"};
+let John = {name: "John"};
+let Dave = {name: "Dave"};
 
 John.f = sayBye;
 Dave.f = sayBye;
@@ -119,21 +121,41 @@ function basket(name) {
     this.is_empty = false;
 }
 
+// Создаются два новых объекта с именами basketOne и basketTwo, они имеют свойства
 let basketOne = new basket("Магнит");
 let basketTwo = new basket("Пятерочка");
 
 
 
 
+// Опциональная цепочка
+let message = {
+    toUser: "id 12345",
+};
+
+// При строгом режиме вызывает ошибку
+console.log(message.fromUser);
+// Тут приходит на помощь опциональная цепочка
+console.log(message.fromUser?.name);
+
+// Тут ошибка
+// console.log(email?.fromUser);
 
 
+// Например, ?.() используется для вызова функции, которая может не существовать
+let userAdmin = {
+    admin() {
+      alert("Я админ");
+    }
+  };
+  
+  let userGuest = {};
+  
+  userAdmin.admin?.(); // Я админ
+  
+  userGuest.admin?.(); // ничего не произойдет (такого метода нет)
 
 
-
-
-
-
-
-
+// Синтаксис ?.[] также работает, если мы хотим использовать скобки [] для доступа к свойствам вместо точки .
 
 
