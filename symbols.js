@@ -12,4 +12,4 @@ alert(id.toString());
 // Или обратиться к описанию символа
 alert(id.description);
 
- 
+    
