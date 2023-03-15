@@ -1,0 +1,31 @@
+version: '3.1'
+
+# здесь подключаемые образы
+services:
+  php:
+  # для подключения этого сервиса надо обратиться в папку /php и там будет докер файл
+    build: ./php
+    ports:
+      - 8081:80 # 80 - порт в изрображении (в докер-файле)
+
+# название образа (как угодно)
+  db:
+  # Характеристики по подключению
+    image: mariadb:10.6 # это образ, который подключаем
+    restart: always # Если образ прекращает работу, то указываем что делает программа
+    # Настройки при работе с самим образом
+    environment: 
+      MYSQL_ROOT_PASSWORD: notSecureChangeMe
+
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    ports:
+      - 8080:80
+    environment:
+      - PMA_ARBITRARY=1
+
+
+
+# Запуск: docker-compose build 
+# Затем: docker-compose up - запускает все сервисы и полностью проект
