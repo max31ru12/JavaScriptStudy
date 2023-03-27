@@ -57,14 +57,52 @@ console.log(...greeting);
 
 
 // Глобальный объект Window
-window.alert("5");
+window.console.log("5");
 
 // Сделать информацию о текущем пользователе глобальной
 window.CurrentUser = {
     name: 'Mike'
 }
 
-alert(CurrentUser["name"]);
+console.log(CurrentUser["name"]);
+
+
+// Объекты функции
+function SayHi() {
+    console.log("Это фунция приветствия");
+    SayHi.counter++;
+}
+// В JS функции - это объекты, поэтому можно сделать так:
+console.log(SayHi.name); // имя функции
+console.log(SayHi.length); // кол-во параметров функции в ее объявлении
+
+// Можно добавить собственное св-во
+SayHi.counter = 0;
+SayHi();
+SayHi();
+
+console.log(SayHi.counter); // 2
+
+
+// Named Function Expression (NFE)
+let SayBye = function func(who) {
+    if (who) {
+        console.log(`Bye ${who}`);
+    } else {
+        func("Guest");
+    }
+}
+
+SayBye(); // Bye Guest
+SayBye('Mike'); // Bye Mike
+// func(); - ошибка
+
+
+ // new Function (специальный такой вот синтаксис)
+let sayName = new Function('name', 'return(console.log(name))');
+
+sayName('Mile');
+
 
 
 
