@@ -53,6 +53,22 @@ console.log(...greeting);
     let User = {name: "Max", username: "Max Max"};
 }
 
-console.log(number); // Ошибка, переменная не видна в этом лексическом окружении
+// console.log(number); // Ошибка, переменная не видна в этом лексическом окружении
+
+
+// Глобальный объект Window
+window.alert("5");
+
+// Сделать информацию о текущем пользователе глобальной
+window.CurrentUser = {
+    name: 'Mike'
+}
+
+alert(CurrentUser["name"]);
+
+
+
+
+
 
 
