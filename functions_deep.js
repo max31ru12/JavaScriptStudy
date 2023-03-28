@@ -104,6 +104,30 @@ let sayName = new Function('name', 'return(console.log(name))');
 sayName('Mile');
 
 
+// Планирование вызова (два метода)
+// 1. setTimeout - вызов функции один раз через определенных интервал времени
+// 2. setInterval - вызов функции регулярно, повторяя вызов через определнных интервал времени
+
+
+let SayHello = (Imya) => {console.log(`Hello, ${Imya}`)}
+
+// setInterval(func, delay, arg1, arg2 ...);
+setInterval(SayHello, 10000, 'Peter');
+
+
+// Желательный синтаксис
+setTimeout(() => alert('Hello'), 2000)
+
+
+// Отмена таймера
+// let timerId = setTimeout(...);
+// clearTimeout(timerId);
+
+console.log(Date.now());
+
+
+
+
 
 
 
