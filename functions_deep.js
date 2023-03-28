@@ -126,6 +126,9 @@ setTimeout(() => alert('Hello'), 2000)
 console.log(Date.now());
 
 
+// Декораторы и переадресация вызова, call/apply, декораторы
+
+
 
 
 
