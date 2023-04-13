@@ -67,3 +67,6 @@ console.log(word.at(0));
 console.log(word[word.length - 1]);
 console.log(word.at(-1) );
 
+
+
+
